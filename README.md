@@ -1,6 +1,6 @@
 # Zero-to-Hero Julia workshop
 
-This is an intensive full-day workshop for the [Julia language](what-is-Julia?), composed out of three 2-hour segments. it assumes only *rudimentary programming familiarity*. For example, what is a `for` loop will be explained, and the syntax will be shown, but we won't be dwelling too much on really explaining the nature of a `for`-loop and how to use it.
+This is an intensive full-day workshop for the [Julia language](#what-is-Julia?), composed out of three 2-hour segments. it assumes only *rudimentary programming familiarity*. For example, what is a `for` loop will be explained, and the syntax will be shown, but we won't be dwelling too much on really explaining the nature of a `for`-loop and how to use it.
 
 The goal of the workshop is to take you from zero to hero (regarding Julia): even if you know nothing about Julia, by the end you should be able to use it like a pro.
 
