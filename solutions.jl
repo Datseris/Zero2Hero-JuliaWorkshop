@@ -41,6 +41,20 @@ a = logistic(0.5, 3.7, 100)
 
 hamming(a, b) = count(i != j for (i, j) in zip(a, b))
 hamming("AGAGAGATCCCTTA", "ATATATAGGCCAXA")
+
+babystep(x, y) = 0.5(x + y/x)
+function babylon(y, ε)
+    n, x, xn = 0, 1.0, Inf
+    while abs(x - xn) > ε
+        xn = x
+        x = babystep(xn, y)
+        n += 1
+    end
+    println("Took me $n steps!")
+    return x
+end
+babylon(2, 1e-12)
+
 #########################################################################
 # 2
 #########################################################################

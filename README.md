@@ -31,8 +31,6 @@ Much of the material of this workshop is created by the author (George Datseris)
 * Carsten Bauer's workshop https://github.com/crstnbr/JuliaWorkshop19
 * Stefan Karpinski's JuliaCon talk, "The Unreasonable Effectiveness of Multiple Dispatch"
 * Jonas Isensee's DrWatson talk at Julia users meetup (in UK, hosted by Invenia)
-
-Also have a look at the following sources, which have interesting exercises not used here:
 * https://github.com/mitmath/18330
 
 
