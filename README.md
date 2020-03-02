@@ -12,7 +12,7 @@ These notebooks are available in this repo: https://github.com/Datseris/Zero2Her
 To be able to run everything in these notebooks you will need install and compile some Julia packages. For most of the packages that will be used, installation and compilation are instant, but for the following ones it isn't. So please open a new Julia REPL (the console that is installed with Julia) and run the following commands and let them in the background while we go through the first part of this workshop:
 ```julia
 using Pkg
-Pkg.add("IJulia", "PyPlot", "OrdinaryDiffEq", "DynamicalSystems")
+Pkg.add(["IJulia", "PyPlot", "OrdinaryDiffEq", "DynamicalSystems"])
 using IJulia, PyPlot, OrdinaryDiffEq, DynamicalSystems
 ```
 For the other packages you will encounter in these notebooks, simply doing `Pkg.add("PackageName"); using PackageName` on the spot should be fast enough.

@@ -1,17 +1,19 @@
+#=
+Please notice: the solutions to these exercises are
+written in a form a exprienced Julia user would solve them.
+This is on purpose, to get more familiar with "normal" Julia
+syntax. For example you will see syntax like:
+`a && return b`.
+For anything that you are unfamiliar with, don't worry,
+just search it on the Julia docs (only basic syntax is used here).
+
+Remember, if there is a symbol, e.g. `≠` , or a function, e.g. `haskey`
+that you don't know, use the help functionality of Julia: ?function_name
+=#
+
 #########################################################################
 # 1
 #########################################################################
-function count_nucleotides(strand::AbstractString)
-    occurence = Dict('A' => 0, 'C' => 0, 'G' => 0, 'T' => 0)
-    for n in strand
-        haskey(occurence, n) || error("unknown nucleotide $(n)!")
-        occurence[n] += 1
-    end
-    return occurence
-end
-count_nucleotides("AGAGAGATCCCTTA")
-count_nucleotides("ATATATAGGCCAX")
-
 function collatz(n)
     c = 0
     while n ≠ 1
@@ -38,6 +40,17 @@ function logistic(x0, r, N)
     return a
 end
 a = logistic(0.5, 3.7, 100)
+
+function count_nucleotides(strand::AbstractString)
+    occurence = Dict('A' => 0, 'C' => 0, 'G' => 0, 'T' => 0)
+    for n in strand
+        haskey(occurence, n) || error("unknown nucleotide $(n)!")
+        occurence[n] += 1
+    end
+    return occurence
+end
+count_nucleotides("AGAGAGATCCCTTA")
+count_nucleotides("ATATATAGGCCAX")
 
 hamming(a, b) = count(i != j for (i, j) in zip(a, b))
 hamming("AGAGAGATCCCTTA", "ATATATAGGCCAXA")
@@ -71,11 +84,15 @@ struct GroupLeader <: AbstractPerson
     name::String
     group::String
 end
-showname(p::AbstractPerson) = print("This is a $(typeof(p)) named $(p.name) ")
+showname(p::AbstractPerson) =
+    print("This is a $(typeof(p)) named $(p.name) ")
 showproperty(p::Person) = nothing
-showproperty(p::GradStudent) = println("with grade $(p.grade)")
-showproperty(p::GroupLeader) = println("with group $(p.group)")
-person_info(p::AbstractPerson) = (showname(p); showproperty(p))
+showproperty(p::GradStudent) =
+    println("with grade $(p.grade)")
+showproperty(p::GroupLeader) =
+    println("with group $(p.group)")
+person_info(p::AbstractPerson) =
+    (showname(p); showproperty(p))
 
 # %% my own range
 struct Range{T}
@@ -90,7 +107,7 @@ function Range(a::T, b::T, c::T) where {T}
     return Range{T}(a, b, c, n)
 end
 function Base.getindex(r::Range, i)
-    (i ≤ 0 || i > r.n) && error("Index is out of bounds!")
+    (i ≤ 0 || i > r.n) && error("Index out of bounds!")
     return r.start + (i-1)*r.step
 end
 r = Range(0, 0.2, 4)
@@ -120,7 +137,7 @@ mutable struct WhackaDoodle
     n::Int
     last::Float64
 end
-WhackaDoodle(n::Int) = WhackaDoodle(n, rand())
+WhackaDoodle(n::Int) = WhackaDoodle(n, 0)
 w = WhackaDoodle(10)
 
 function Base.iterate(w::WhackaDoodle, i = 1)
