@@ -19,7 +19,7 @@ using IJulia, PyPlot, OrdinaryDiffEq, DynamicalSystems
 ```
 For the other packages you will encounter in these notebooks, simply doing `Pkg.add("PackageName"); using PackageName` on the spot should be fast enough.
 
-Notice that you can have multiple Julia REPLs open in parallel. These tutorials are made in Jupyter notebooks, and thus require the `IJulia` package to run. I personally use the [Juno IDE](https://junolab.org/) to use Julia, instead of the REPL.
+Notice that you can have multiple Julia REPLs open in parallel. These tutorials are made in Jupyter notebooks, and thus require the `IJulia` package to run. I personally use the [VSCode IDE](https://www.julia-vscode.org/) to write and run Julia code, instead of the REPL.
 
 ### Play around a bit!
 It is **strongly encouraged to have an active mindset during this tutorial**. Instead of only listening to my own boring voice, you should have a second Julia instance (e.g. REPL or a Juno editor) and play around with the code and ideas I present. Ask questions during the tutorial, as there is a lot of time allocated for that!
