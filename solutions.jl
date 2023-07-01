@@ -1,6 +1,6 @@
 #=
 Please notice: the solutions to these exercises are
-written in a form a exprienced Julia user would solve them.
+written in a form a experienced Julia user would solve them.
 This is on purpose, to get more familiar with "normal" Julia
 syntax. For example you will see syntax like:
 `a && return b`.
