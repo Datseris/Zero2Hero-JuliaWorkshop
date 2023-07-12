@@ -72,7 +72,10 @@ hidedecorations!(ax)
 hidespines!(ax)
 fig
 
+
+
 # Performance
+# Collatz
 function collatz(n)
     c = 0
     while n ≠ 1
@@ -84,12 +87,16 @@ end
 collatz(100)
 
 
-logistic(x, r) = r*x*(1-x)
-function logistic(x0, r, N)
-    a = fill(x0, N)
-    for i in 2:N
-        a[i] = logistic(a[i-1], r)
-    end
-    return a
+# Henon
+henon_rule(x) = (1.0 - 1.4*x[1]^2 + x[2], 0.3*x[1])
+
+function henon_orbit(u0, N)
+    orbit = fill(u0, N)
+    henon_orbit!(orbit)
 end
-a = logistic(0.5, 3.7, 100)
+function henon_orbit!(orbit)
+    for j in 2:length(orbit)
+        orbit[j] = henon_rule(orbit[j-1])
+    end
+    return orbit
+end
