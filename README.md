@@ -81,4 +81,4 @@ Much of the material of this workshop is created by the author (George Datseris)
 * Stefan Karpinski's JuliaCon talk, "The Unreasonable Effectiveness of Multiple Dispatch"
 * Jonas Isensee's DrWatson talk at Julia users meetup (in UK, hosted by Invenia)
 * https://github.com/mitmath/18330
-
+* Kristoffer Carlsson and Fredrik Bagge Carlson's talk "Julia for AI and Data Science" https://www.youtube.com/watch?v=kc9HwsxE1OY
