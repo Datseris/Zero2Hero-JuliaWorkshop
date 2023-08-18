@@ -60,8 +60,8 @@ using DynamicalSystems, DataFrames, Query
 
 ro = Systems.roessler(ones(3))
 
-as = 0.15:0.05:0.25
-bs = 0.15:0.05:0.25
+as = 0.15:0.025:0.25
+bs = 0.15:0.025:0.25
 cs = 4:0.1:6.0
 
 df = DataFrame()
@@ -96,10 +96,11 @@ end
 
 unstacked = unstack(heatdf, :b,  :H; renamecols = (x -> "H for b=$(x)"))
 heat = Matrix(unstacked[:, Not(:c)])
-fig, ax = heatmap(bs, cs, heat)
-Colorbar(ax)
+fig, ax, hm = heatmap(bs, cs, heat)
+Colorbar(fig[1,2], hm)
 ax.xlabel = "b"
 ax.ylabel = "c"
+ax.title = "H at a = 0.2"
 fig
 
 # %% reproducible science projet
@@ -112,4 +113,4 @@ using Pkg; Pkg.add("JLD2")
 # and do:
 # tagsave("test.JLD2", data; gitpath = dirname(@__DIR__))
 
-rm("test"; recursive = true, force = true)
+# rm("test"; recursive = true, force = true)
