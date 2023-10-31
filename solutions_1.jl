@@ -12,11 +12,14 @@ end
 babylon(2, 1e-12)
 
 # exercise 2
-function count_nucleotides(strand::AbstractString)
+function count_nucleotides(strand)
     occurence = Dict('A' => 0, 'C' => 0, 'G' => 0, 'T' => 0)
-    for n in strand
-        haskey(occurence, n) || error("unknown nucleotide $(n)!")
-        occurence[n] += 1
+    for nucleotide in strand
+        if haskey(occurence, nucleotide)
+            occurence[nucleotide] += 1
+        else
+            error("unknown nucleotide $(nucleotide)!")
+        end
     end
     return occurence
 end
@@ -30,6 +33,12 @@ function fibonacci(n)
 end
 fibonacci(5)
 fibonacci.(1:8)
+
+# Exercise 4
+# TODO:
+
+# Exercise 5
+# TODO:
 
 # Plotting, ex. 1
 using Random: Xoshiro
