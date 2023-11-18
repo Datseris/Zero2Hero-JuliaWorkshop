@@ -73,9 +73,9 @@ Much of the material of this workshop is created by the author (George Datseris)
 
 * The JuliaBox tutorials for the core language
 * Exercises from exercism.io
-* Chris Rackauckas' tutorials from http://ucidatascienceinitiative.github.io/IntroToJulia/
-* Carsten Bauer's workshop https://github.com/crstnbr/JuliaWorkshop19
+* Chris Rackauckas' tutorials from <http://ucidatascienceinitiative.github.io/IntroToJulia/>
+* Carsten Bauer's workshop <https://github.com/crstnbr/JuliaWorkshop19>
 * Stefan Karpinski's JuliaCon talk, "The Unreasonable Effectiveness of Multiple Dispatch"
 * Jonas Isensee's DrWatson talk at Julia users meetup (in UK, hosted by Invenia)
-* https://github.com/mitmath/18330
-* Kristoffer Carlsson and Fredrik Bagge Carlson's talk "Julia for AI and Data Science" https://www.youtube.com/watch?v=kc9HwsxE1OY
+* <https://github.com/mitmath/18330>
+* Kristoffer Carlsson and Fredrik Bagge Carlson's talk "Julia for AI and Data Science" <https://www.youtube.com/watch?v=2MBD10lqWp8>
