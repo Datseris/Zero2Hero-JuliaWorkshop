@@ -58,14 +58,7 @@ The [Julia documentation](https://docs.julialang.org/en/v1/) outlines the main f
 
 ## Why should I learn Julia?
 
-I've put my thoughts on how to answer this question in a well-composed text: [Why Julia - a Manifesto](https://github.com/Datseris/whyjulia-manifesto). The brief summary that follows from there is that among the four most important aspects of a programming language, Julia emerges as the strongest candidate for scientific computing:
-
-1. **Speed of writing.** Julia is a dynamic language allowing flexible code development and rapid prototyping. It has intuitive, high level syntax, and when combined with its modern parser this leads concise and readable code.
-2. **Speed of execution.** Julia code is compiled to efficient machine code that runs as fast as traditional static languages like C or FORTRAN. That is a native property of the language and applies to typical user code - no need for external tools like Numba or Cython!
-3. **Available libraries.** Julia has software organizations around seemingly every area of science, from high energy physics to economics, offering native Julia software for most scientific applications. Additionally, many of these software are the best-in-class among all open source programming languages, e.g., DifferentialEquations.jl, JuMP.jl, or Turing.jl.
-4. **Extensibility/Composability.** Julia allows calling C/FORTRAN/R/Python code straightforwardly. Arguably the biggest strength of Julia however is its inter-package composability. Julia has brought in an unprecedented amount of code re-use, enabling packages to easily communicate with each other and extend each other, all without the boilerplate code and name spaces issues one encounters in languages like Python.
-
-For more details, have a look at the manifesto!
+I've put my thoughts on how to answer this question in [Why Julia - a Manifesto](https://github.com/Datseris/whyjulia-manifesto).
 
 ## Credit
 
