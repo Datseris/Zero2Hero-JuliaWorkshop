@@ -11,15 +11,11 @@ struct GroupLeader <: AbstractPerson
     name::String
     group::String
 end
-showname(p::AbstractPerson) =
-    print("This is a $(typeof(p)) named $(p.name) ")
+showname(p::AbstractPerson) = print("This is a $(typeof(p)) named $(p.name) ")
 showproperty(p::Person) = nothing
-showproperty(p::GradStudent) =
-    println("with grade $(p.grade)")
-showproperty(p::GroupLeader) =
-    println("with group $(p.group)")
-person_info(p::AbstractPerson) =
-    (showname(p); showproperty(p))
+showproperty(p::GradStudent) = println("with grade $(p.grade)")
+showproperty(p::GroupLeader) = println("with group $(p.group)")
+person_info(p::AbstractPerson) = (showname(p); showproperty(p))
 
 # %% my own range
 struct Range{T}

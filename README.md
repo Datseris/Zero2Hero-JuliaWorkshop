@@ -6,7 +6,7 @@
    1. [Installing Julia: NOT covered](#installing-julia-not-covered)
    2. [Play around a bit!](#play-around-a-bit)
 3. [What is Julia?](#what-is-julia)
-4. [Why should I learn Julia? A manifesto.](#why-should-i-learn-julia-a-manifesto)
+4. [Why should I learn Julia?](#why-should-i-learn-julia)
 5. [Credit](#credit)
 
 ![workshop's add poster](add.jpg)
@@ -56,23 +56,9 @@ It is **strongly encouraged to have an active mindset during this tutorial**. In
 
 The [Julia documentation](https://docs.julialang.org/en/v1/) outlines the main facts and features of Julia.
 
-## Why should I learn Julia? A manifesto.
+## Why should I learn Julia?
 
-*(in the author's personal opinion, which targets an audience of scientists)*
-
-1. **It solves the two language problem**: it is a dynamic and interactive language that allows real time scientific exploration typically done in interpreted languages like Python, but still offers the performance of static low level languages such as C. Julia works by compiling machine level code and hence all basic programming concepts such as iteration, broadcasting, function-as-arguments, are fast by themselves. Hence, you would never have to "re-write" a code in Julia in another language to make it faster! This way you spent less time writing (or re-writing code) and more time progressing your work. It also means that you don't have to be proficient in two programming languages to get involved with a library development.
-2. **Its syntax is intuitive and as close to math as possible**: The combination of high level syntax, Unicode, and simple to reason for code makes the code faster to write and read.
-3. **Multiple dispatch**: is the core programming paradigm of Julia and is used with functional programming. In our opinion is the [most suitable paradigm to implement scientific thought in code](https://www.youtube.com/watch?v=7y-ahkUsIrY) because it parallelizes scientific thinking: a "process" (function) does not belong to any particular data structure. Multiple dispatch and the exponential expressive power it brings are showcased well in [this talk by Stefan Karpinski](https://www.youtube.com/watch?v=kc9HwsxE1OY).
-4. **Unprecedented code re-use and inter-package communication**. This is a direct consequence of multiple dispatch and it is a unique property of Julia that has not been seen in other programming languages. In short, in Julia packages can use and extend other packages very easily (most of the times for free!), without boiler-plate or glue code. Due to this, most packages re-use existing code and have common interfaces with other packages. For example [in this talk Chris Rackauckas](https://youtu.be/tynmTkpdAME?si=44MRCVQtW4sQ5JFI&t=1879) highlights how in Julia developing for machine learning is the same as developing as for any other standard situation, which is a big reason why the scientific machine learning open community in Julia is ahead of Python equivalents like PyTorch. To bring the point home even further, see [this presentation by Kristoffer Carlsson and Fredrik Bagge Carlson](https://www.youtube.com/watch?v=2MBD10lqWp8) for an insane showcase of the power of the multiple dispatch system, showing how a user gets **for free** trigonometric functions for real numbers, matrices, error propagation, symbolic dynamics, and automatic differentiation, all with the base `sin` function and only 10 lines of code.
-5. **Julia is written in Julia**: this is why Julia solves the two language problem, and it comes with even more advantages.
-   * A typical user code isn't really different from Julia's very own base code, all the way down to basic arithmetic. This means, that understanding source code of other's packages, or even Julia's code itself, is straightforward. Hence, it is also straightforward to improve an existing codebase via a code contribution.
-   * The above leads to the natural consequence that a typical Julia user is already 90% of the way to being a Julia package developer. Julia's strong package tooling suite further makes this easier, which explains the explosive growth of Julia despite the lack of funding (versus e.g., Python).
-   * Most basic Julia types are used almost everywhere, and even if they aren't, due to multiple dispatch a front-end user wouldn't care. To give an example: a Python user would _have_ to use e.g., array types from PyTorch to implement performant advanced algorithms, especially for large datasets. However, if performant version of a function/operation a user needed, like e.g., the gamma function or some algorithm that operates on arrays, was not implemented for this "special" array type, that user is doomed. They will most likely not understand how a package like PyTorch implements numerics, to add their version of what they need. Instead, they will have to convert to "normal" python array, at a price of a slowdown in performance, and then going back again to the "fast" array versions. In Julia such things don't happen, because the "fast" array version is the "standard" array version, and even if not, all array types are anyways part of the same abstract interface due to multiple dispatch.
-   * As a consequence, Python users are "forced" to find existing implementations of algorithms/functionalities in these Python packages like PyTorch/Numpy, and are "discouraged" from writing their own versions (writing a Runge-Kutta solver in Python was one of the biggest mistakes I've made!). Julia users instead could write their own low-level code, which improves their algorithmic/programming skills, gives them better understanding of how the algorithm works, and gives them more flexibility over it as well.
-6. **Julia's package ecosystem is top-of-the-class in many scientific disciplines already**. Even though Julia is very new, and with a relatively small user base ([StackOverflow results](https://survey.stackoverflow.co/2022/#technology-most-popular-technologies) show Python usage at about 50%, Julia at about 2%), in many disciplines Julia's ecosystem is at least as good, and typically better, as Python's. I can only speak from experience, and from my perspective these ecosystems are about [nonlinear dynamics & complex systems](https://juliadynamics.github.io/JuliaDynamics/), [differential equations & scientific machine learning](https://sciml.ai/), [machine learning and auto differentiation](https://fluxml.ai/), [statistics](https://github.com/JuliaStats) (especially Distributions.jl and OnlineStats.jl), [interactive plotting](https://docs.makie.org/stable/) and even a [scientific project assistant software](https://github.com/JuliaDynamics/DrWatson.jl).
-7. **Interoperability with other languages**: C is directly and natively callable from Julia. Python is callable from Julia with the same syntax as normal object-oriented Python code via [PythonCall.jl](https://github.com/cjdoris/PythonCall.jl). This means that you can **really use any Python package in Julia**, most of the time without even changing the syntax of the Python code. R, FORTRAN, etc., are callable similarly simply.
-8. **Exceptionally strong integrated package manager**: Julia's package manager is just another package. It is flexible, strong, leading to less ambiguities versus other languages. On top of it, a strong binary shipping system is built. This all means that everything runs everywhere: no `makefile` nonsence, no spending weeks figuring out how to install things, no worries whether your program will be able to run on Windows. Everything is a 1-click install.
-9.  **Welcoming and responsive community**: My experience using Julia for 6+ years is that it has one of the most welcoming and responsive communities I have encountered. New questions asked on the official Julia Discourse forum or Slack channels consistently get answers within minutes. This means that there is no real reason to worry that your questions won't get answers due to the relatively smaller community of Julia versus e.g., Python.
+I've put my thoughts on how to answer this question in [Why Julia - a Manifesto](https://github.com/Datseris/whyjulia-manifesto).
 
 ## Credit
 
@@ -80,9 +66,9 @@ Much of the material of this workshop is created by the author (George Datseris)
 
 * The JuliaBox tutorials for the core language
 * Exercises from exercism.io
-* Chris Rackauckas' tutorials from http://ucidatascienceinitiative.github.io/IntroToJulia/
-* Carsten Bauer's workshop https://github.com/crstnbr/JuliaWorkshop19
+* Chris Rackauckas' tutorials from <http://ucidatascienceinitiative.github.io/IntroToJulia/>
+* Carsten Bauer's workshop <https://github.com/crstnbr/JuliaWorkshop19>
 * Stefan Karpinski's JuliaCon talk, "The Unreasonable Effectiveness of Multiple Dispatch"
 * Jonas Isensee's DrWatson talk at Julia users meetup (in UK, hosted by Invenia)
-* https://github.com/mitmath/18330
-* Kristoffer Carlsson and Fredrik Bagge Carlson's talk "Julia for AI and Data Science" https://www.youtube.com/watch?v=kc9HwsxE1OY
+* <https://github.com/mitmath/18330>
+* Kristoffer Carlsson and Fredrik Bagge Carlson's talk "Julia for AI and Data Science" <https://www.youtube.com/watch?v=2MBD10lqWp8>
