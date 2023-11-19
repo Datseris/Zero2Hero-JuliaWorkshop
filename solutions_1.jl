@@ -15,11 +15,10 @@ babylon(2, 1e-12)
 function count_nucleotides(strand)
     occurence = Dict('A' => 0, 'C' => 0, 'G' => 0, 'T' => 0)
     for nucleotide in strand
-        if haskey(occurence, nucleotide)
-            occurence[nucleotide] += 1
-        else
+        if !haskey(occurence, nucleotide)
             error("unknown nucleotide $(nucleotide)!")
         end
+        occurence[nucleotide] += 1
     end
     return occurence
 end
@@ -35,10 +34,9 @@ fibonacci(5)
 fibonacci.(1:8)
 
 # Exercise 4
-# TODO:
-
-# Exercise 5
-# TODO:
+hamming(s1, s2) = count(pair -> pair[1] ≠ pair[2], zip(s1, s2))
+hamming("ATA", "ATC")
+hamming("ATC", "CAT")
 
 # Plotting, ex. 1
 using Random: Xoshiro
