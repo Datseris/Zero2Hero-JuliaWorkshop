@@ -21,7 +21,7 @@ This workshop is also available on YouTube: https://www.youtube.com/watch?v=Fi7P
 
 **Installing Julia and the environment you want to program Julia in is NOT part of this workshop!** There are many options, up to preference, and may even depend on your operating system. And some options may be impossible depending on your environment, who knows!
 
-To participate in this workshop, please follow these steps:
+To participate in this workshop, we recommend that you follow these steps to get started with a Julia programming environment:
 
 0. **Clone this GitHub repository.** This contains the Jupyter notebooks that we will use for the tutorials, the exercise solutions, and the installation script.
 1. **Install Julia.** We recommend to use the [`juliaup`](https://github.com/JuliaLang/juliaup) command line tool for installing and managing Julia, but you can use whatever means you want. After installing Julia, you can launch it, which will launch the REPL (read-evaluate-print-loop) environment where you can immediately start coding and running Julia in.
