@@ -34,7 +34,7 @@ To participate in this workshop, please follow these steps:
 
 ## What is Julia?
 
-[Julia](https://julialang.org/) is a relatively new programming language, developed at MIT, with version 1.0 released in August 2018. Even though it is so recent, it has taken the scientific community by storm and many serious large scale projects have started using Julia.
+[Julia](https://julialang.org/) is a relatively new programming language, developed at MIT, with version 1.0 released in August 2018. It was developed particularly targeting scientific computing applications. Even though it is so recent, it has taken the scientific community by storm and many large scale projects have started using Julia.
 
 The [Julia documentation](https://docs.julialang.org/en/v1/) outlines the main facts and features of Julia.
 
