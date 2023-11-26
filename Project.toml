@@ -1,7 +1,6 @@
 name = "Julia Zero2Hero"
 
 [deps]
-AbstractTrees = "1520ce14-60c1-5f80-bbc7-55ef81b5835c"
 BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
 BlackBoxOptim = "a134a8b2-14d6-55f6-9291-3336d3ab0209"
 CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
