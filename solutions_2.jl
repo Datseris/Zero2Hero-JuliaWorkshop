@@ -1,3 +1,6 @@
+import Pkg
+Pkg.activate(@__DIR__)
+
 # %% student type hierarchy
 abstract type AbstractPerson end
 struct Person <: AbstractPerson
@@ -60,7 +63,7 @@ mutable struct WhackaDoodle
     n::Int
     last::Float64
 end
-WhackaDoodle(n::Int) = WhackaDoodle(n, 0)
+WhackaDoodle(n::Int) = WhackaDoodle(n, 0.0)
 w = WhackaDoodle(10)
 
 function Base.iterate(w::WhackaDoodle, i = 1)
