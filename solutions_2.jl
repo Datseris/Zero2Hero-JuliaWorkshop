@@ -20,33 +20,57 @@ showproperty(p::GradStudent) = println("with grade $(p.grade)")
 showproperty(p::GroupLeader) = println("with group $(p.group)")
 person_info(p::AbstractPerson) = (showname(p); showproperty(p))
 
+person_info(Person("Tim"))
+person_info(GradStudent("Tim", 1))
+person_info(GroupLeader("Tim", "A"))
+
+
+
+
+
+
+
+
+
+
+
 # %% my own range
 struct Range{T}
     start::T
     step::T
     stop::T
-    n::Int # it is convenient to make length part of struct
 end
+# We also implement a promotion rule,
+# so that `Range(0, 0.5, 1)` works
+# (i.,e., combining integers and floats as input is fine)
 Range(a, b, c) = Range(promote(a, b, c)...) # convenience!
-function Range(a::T, b::T, c::T) where {T}
-    n = (c - a)÷b
-    return Range{T}(a, b, c, n)
-end
+
 function Base.getindex(r::Range, i)
-    (i ≤ 0 || i > r.n) && error("Index out of bounds!")
+    n = (r.stop - r.start)÷r.step
+    if (i ≤ 0 || i > n)
+        error("Index out of bounds!")
+    end
     return r.start + (i-1)*r.step
 end
 r = Range(0, 0.2, 4)
 r[5]
 r[514]
 r[-5]
+r["test"]
+
+
+
+
+
+
+
 
 # %% making range iterable
+Base.length(r::Range) = (r.stop - r.start)÷r.step
 function Base.iterate(r::Range, i = 1)
-    i > r.n && return nothing
-    return (r.start + (i-1)*r.step), i+1
+    i > length(r) && return nothing
+    return r[i], i+1
 end
-Base.length(r::Range) = r.n
 for s in r
     @show s
 end
@@ -56,6 +80,11 @@ unitr = Range(1u"kg", 0.1u"kg", 10u"kg")
 for s in unitr
     @show s
 end
+
+
+
+
+
 
 
 # %% custom whackadoodle iterator
@@ -79,7 +108,7 @@ function Base.iterate(w::WhackaDoodle, i = 1)
     return w.last, i+1
 end
 
-w = WhackaDoodle(500)
+w = WhackaDoodle(50000)
 using Statistics: mean, std
 std(w)
 
