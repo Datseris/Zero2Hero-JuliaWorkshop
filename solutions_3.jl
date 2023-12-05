@@ -1,7 +1,6 @@
 using Pkg
 Pkg.activate(@__DIR__)
 
-
 using OrdinaryDiffEq, CairoMakie, StaticArraysCore
 bouncy(u,p,t) = SVector(u[2], -p[1] -p[2]*u[2])
 condition(u,t,integrator) = u[1]
@@ -17,7 +16,7 @@ lines(sol.t, sol[1, :])
 # %% distribution quantile
 using Distributions
 function myquantile(d::UnivariateDistribution, q::Number)
-    θ = mean(d)
+    θ = median(d)
     tol = Inf
     while tol > 1e-5
         θold = θ
