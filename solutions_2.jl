@@ -96,7 +96,7 @@ WhackaDoodle(n::Int) = WhackaDoodle(n, 0.0)
 w = WhackaDoodle(10)
 
 function Base.iterate(w::WhackaDoodle, i = 1)
-    if i == w.n
+    if i == w.n + 1
         return nothing
     elseif i == 1
         w.last = rand()

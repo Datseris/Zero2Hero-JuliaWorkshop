@@ -5,7 +5,7 @@ using OrdinaryDiffEq, CairoMakie, StaticArraysCore
 bouncy(u,p,t) = SVector(u[2], -p[1] -p[2]*u[2])
 condition(u,t,integrator) = u[1]
 u₀ = SVector(1.0, 0.0)
-p₀ = [1, 0.99]
+p₀ = [10, 0.99]
 prob = ODEProblem(bouncy, u₀, (0.0, 10.0), p₀)
 saveat = 0:0.1:10
 affect!(integ) = integ.u = SVector(max(0, integ.u[1]), -integ.u[2])
@@ -101,6 +101,22 @@ ax.xlabel = "b"
 ax.ylabel = "c"
 ax.title = "H at a = 0.2"
 fig
+
+# %% Textbook optimization problem
+function Rosenbrock(p::Vector{Float64})
+    x, y = p
+    return (2.0 - x)^2 + 100(y - x^2)^2
+end
+
+using BlackBoxOptim
+
+x_range = (-5.0, 5.0)
+y_range = (0.0, 10.0)
+
+optimRes = bboptimize(Rosenbrock; SearchRange = [x_range, y_range], MaxTime = 30.0)
+
+println("Optimal Rosenbrock parameters: x = $(best_candidate(optimRes)[1]), y = $(best_candidate(optimRes)[2])")
+println("Minimum Rosenbrock value: ", best_fitness(optimRes))
 
 # %% reproducible science projet
 using DrWatson
