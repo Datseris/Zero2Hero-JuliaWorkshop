@@ -96,7 +96,8 @@ end
 unstacked = unstack(heatdf, :b,  :H; renamecols = (x -> "H for b=$(x)"))
 
 # Makie errors when trying to plot missing so we need to convert the type.
-disallowmissing!(unstacked)heat = Matrix(unstacked[:, Not(:c)])
+disallowmissing!(unstacked)
+heat = Matrix(unstacked[:, Not(:c)])
 
 fig, ax, hm = heatmap(bs, cs, heat)
 Colorbar(fig[1,2], hm)
