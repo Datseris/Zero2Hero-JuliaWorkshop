@@ -8,3 +8,7 @@ Pkg.activate(@__DIR__)
 Pkg.instantiate()
 # Compile all installed packages
 Pkg.precompile()
+# If the `precompile` command does not work for you (something does not compile)
+# it may be that you are using too recent of Julia version that is incompatible
+# with an old and potentially outdated package that has been stored into the Manifest.toml.
+# Just try calling `Pkg.update()` first and then it should work!
