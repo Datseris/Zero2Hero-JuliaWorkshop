@@ -2,7 +2,7 @@
 
 **Table of Contents**
 1. [Summary](#summary)
-2. [Participating in this workshop](#participating-in-this-workshop)
+2. [Julia and Jupyter installation](#julia-and-jupyter-installation)
 3. [What is Julia?](#what-is-julia)
 4. [Why should I learn Julia?](#why-should-i-learn-julia)
 5. [Credit](#credit)
@@ -17,20 +17,59 @@ The material has been updated during July-December 2023 to Julia v1.9+ and corre
 
 This workshop is also available on YouTube: https://www.youtube.com/watch?v=Fi7Pf2NveH0 in its original form, however the current notebook versions are significantly more streamlined and of higher educational quality!
 
-## Participating in this workshop
+## Julia and Jupyter installation
 
 **Installing Julia and the environment you want to program Julia in is NOT part of this workshop!** There are many options, up to preference, and may even depend on your operating system. And some options may be impossible depending on your environment, who knows!
+Essentially what you want to achieve is run Julia within a Jupyter environment, and how to do this is up to you.
 
-To participate in this workshop, we recommend that you follow these steps to get started with a Julia programming environment:
+This section outlines our recommendation on how to run Julia+Jupyter and run the notebooks of this workshop. Our recommendations have high robustness and usability, however, there is no guarantee that these recommendations will work for your setup!
+If anything fails, troubleshoot using the official channel for seeking support for the Julia language (<https://julialang.org/about/help/>).
 
-0. **Clone this GitHub repository.** This contains the Jupyter notebooks that we will use for the tutorials, the exercise solutions, and the installation script.
-1. **Install Julia.** We recommend to use the [`juliaup`](https://github.com/JuliaLang/juliaup) command line tool for installing and managing Julia, but you can use whatever means you want. After installing Julia, you can launch it, which will launch the REPL (read-evaluate-print-loop) environment where you can immediately start coding and running Julia in.
-2. **Install VSCode.** We recommend [VSCode](https://code.visualstudio.com/) as the environment to code and run Julia in, because it has an integrated text editor and a REPL console, it can run Jupyter notebooks out of the box, and has high quality debugging tooling.
-3. **Install the Julia for VSCode extension.** To do this, open VSCode, go to Extensions, search for `Julia` and install. Once this is done, you should be able to run Julia within VSCode without any further configuration. Examples of what is possible:
+### Step 0: clone this GitHub repository
+
+This contains the Jupyter notebooks that we will use for the tutorials, the exercise solutions, and the installation script.
+
+### Step 1: install Julia
+
+We recommend the [`juliaup`](https://github.com/JuliaLang/juliaup) command line tool for installing and managing Julia, but you can use whatever means you want. The same tool is recommended by the official Julia website, however if something goes wrong you should visit the Julia installation page for alternatives: <https://julialang.org/install/>.
+
+After installing Julia, **make sure the installation was successful** by launching it.
+This will open the REPL (read-evaluate-print-loop) environment, essentially an interactive window with black background where you can immediately running Julia in.
+Type a dummy command like `x = 5 + 2` and make sure it evaluates.
+
+### Step 2: install an environment to run Jupyter notebooks
+
+Once again, how to achieve this is up to you, and here we provide two possibilities.
+If both fail, you need to troubleshoot your problem using the web.
+
+Regardless of the method you chose, test that your installation worked by creating a new Jupyter notebook.
+
+#### Method 1: VSCode (our recommendation)
+
+1. **Install VSCode.** We recommend [VSCode](https://code.visualstudio.com/) as the environment to code and run Julia in, because it has an integrated text editor and a REPL console, it can run Jupyter notebooks out of the box, and has high quality debugging tooling.
+2. **Install the Julia for VSCode extension.** To do this, open VSCode, go to Extensions, search for `Julia` and install. Once this is done, you should be able to run Julia within VSCode without any further configuration. Examples of what is possible:
    1. A console for Julia which you can get by typing `Alt+J, Alt+O` in VSCode.
    2. Using Julia in a scripting environment in VSCode. When working on a Julia script (a `.jl` text file) you may evaluate any amount of code in the script interactively. E.g., `Ctrl+Enter` evaluates current line being edited. The Julia process that evaluates the script is the same as the one in the console you get in point 1. **The Julia console and the text editor window are linked!**
-   3. You can open Jupyter notebooks without installing anything else. Simply drag+drop the notebook into VSCode and it will request a "kernel" (choose Julia).  Each Jupyter notebook launches a dedicated Julia process, so the Jupyter notebooks are not linked with the standard text editor and Julia console of VSCode!
-4. **Install the Julia packages that we will use.** Depending on your internet connection and your machine, the speed that the Julia packages we use will be downloaded, installed, and compiled, can take up to several minutes. Hence, it is good to do it before the workshop. To install everything run the `install_and_compile.jl` Julia script. This is also a good test that you have correctly installed Julia.
+   3. You can open Jupyter notebooks without installing anything else. Simply drag+drop the notebook into VSCode and it will request a "kernel" (choose Julia). Or, you can create new Jupyter notebooks by pressing `Ctrl+Shift+P` inside VSCode and then typing `Create: New Jupyter Notebook`. Each Jupyter notebook launches a dedicated Julia process, so the Jupyter notebooks are not linked with the standard text editor and Julia console of VSCode!
+
+#### Method 2: `IJulia` package
+
+If the above doesn't work for you, a robust alternative is to use the `IJulia` package.
+Open the Julia REPL again (Step 1), and then input the following 4 commands:
+
+```julia
+import Pkg
+Pkg.add("IJulia")
+import IJulia
+IJulia.notebook()
+```
+
+this will install the `IJulia` package, an independent and minimal Jupyter environment, compile both, and then launch a Jupyter server into your browser.
+There you can create new or open existing Jupyter notebooks.
+
+### Step 4: install and precompile the packages we will use
+
+Depending on your internet connection and your machine, the speed that the Julia packages we use will be downloaded, installed, and compiled, can take up to several minutes. Hence, it is good to do it before the workshop. To install everything run the `install_and_compile.jl` Julia script that is in this repo that you clone.
 
 ## What is Julia?
 
