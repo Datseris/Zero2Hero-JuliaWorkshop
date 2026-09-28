@@ -67,7 +67,7 @@ IJulia.notebook()
 this will install the `IJulia` package, an independent and minimal Jupyter environment, compile both, and then launch a Jupyter server into your browser.
 There you can create new or open existing Jupyter notebooks.
 
-### Step 4: install and precompile the packages we will use
+### Step 3: install and precompile the packages we will use
 
 Depending on your internet connection and your machine, the speed that the Julia packages we use will be downloaded, installed, and compiled, can take up to several minutes. Hence, it is good to do it before the workshop. To install everything run the `install_and_compile.jl` Julia script that is in this repo that you clone.
 
